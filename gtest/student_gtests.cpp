@@ -66,6 +66,7 @@ TEST(WordLadderTest, EditDistanceWithin1)
 {
   EXPECT_TRUE(edit_distance_within("mat", "matt", 1));
   EXPECT_TRUE(edit_distance_within("mat", "math", 1));
+  EXPECT_FALSE(edit_distance_within("mat", "bath", 1));
   EXPECT_TRUE(edit_distance_within("mat", "at", 1));
   EXPECT_TRUE(edit_distance_within("mat", "ma", 1));
   EXPECT_TRUE(edit_distance_within("stride", "strider", 1));

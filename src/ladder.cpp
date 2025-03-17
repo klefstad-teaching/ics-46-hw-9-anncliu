@@ -69,21 +69,40 @@ bool is_adjacent(const string& word1, const string& word2)
 
 vector<string> generate_word_ladder(const string& begin_word, const string& end_word, const set<string>& word_list)
 {
-    vector<string> ladder;
+    // queue<vector<string>> ladder_queue;
+    // vector<string> begin_ladder(1, begin_word);
+    // ladder_queue.push(begin_ladder);
 
-    queue<vector<string>> ladder_queue;
-    vector<string> begin_ladder(1, begin_word);
-    ladder_queue.push(begin_ladder);
+    // set<string> visited;
+    // visited.insert(begin_word);
 
-    set<string> visited;
-    visited.insert(begin_word);
+    // while (!ladder_queue.empty())
+    // {
+    //     vector<string> partial_ladder = ladder_queue.front();
+    //     ladder_queue.pop();
 
-    while (!ladder_queue.empty())
-    {
+    //     string last_word = partial_ladder.pop_back();
+    //     for (string word : word_list)
+    //     {
+    //         if (is_adjacent(last_word, word))
+    //         {
+    //             if (visited.find(word) == visited.end())
+    //             {
+    //                 visited.insert(word);
+    //                 vector<string> ladder_cpy(partial_ladder);
+    //                 partial_ladder.push_back(word);
 
-    }
+    //                 if (word == end_word)
+    //                     return ladder_cpy;
 
-    return ladder; //fix
+    //                 ladder_queue.push(ladder_cpy);
+    //             }
+    //         }
+    //     }
+    // }   
+
+    vector<string> empty_ladder;
+    return empty_ladder; //fix
 }
 
 
