@@ -45,3 +45,36 @@ TEST(DijkstrasAlgorithmTest, ShortestPathLargeGraph)
   int expected[] = {0, 7, 15, 5, 14, 11, 12};
   are_equal(expected, 7, run_dijkstras("src/large.txt", 0));
 }
+
+
+TEST(WordLadderTest, IsAdjacentLengthDiffGreatertThan1)
+{
+  EXPECT_FALSE(is_adjacent("mat", "mathy"));
+  EXPECT_FALSE(is_adjacent("mat", "attorney"));
+}
+
+// fails 1st and 4th expects
+TEST(WordLadderTest, IsAdjacentLengthGeneral)
+{
+  EXPECT_FALSE(is_adjacent("gcat", "cgta"));
+  EXPECT_FALSE(is_adjacent("moon", "moonlight"));
+  EXPECT_TRUE(is_adjacent("stride", "strider"));
+  EXPECT_FALSE(is_adjacent("steak", "stake"));
+}
+
+TEST(WordLadderTest, EditDistanceWithin1)
+{
+  EXPECT_TRUE(edit_distance_within("mat", "matt", 1));
+  EXPECT_TRUE(edit_distance_within("mat", "math", 1));
+  EXPECT_TRUE(edit_distance_within("mat", "at", 1));
+  EXPECT_TRUE(edit_distance_within("mat", "ma", 1));
+  EXPECT_TRUE(edit_distance_within("stride", "strider", 1));
+}
+
+TEST(WordLadderTest, EditDistanceWithin0)
+{
+  EXPECT_TRUE(edit_distance_within("mat", "bat", 0));
+  EXPECT_TRUE(edit_distance_within("mat", "cat", 0));
+  EXPECT_TRUE(edit_distance_within("mat", "hat", 0));
+}
+
