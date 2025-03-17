@@ -10,7 +10,7 @@ struct DistanceComparer
 {
     bool operator () (const pair<Vertex, Distance>& lhs, const pair<Vertex, Distance>& rhs) const
     {
-        return get<1>(lhs) < get<1>(rhs);
+        return get<1>(lhs) > get<1>(rhs);
     }
 };
 

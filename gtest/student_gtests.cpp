@@ -42,6 +42,6 @@ TEST(DijkstrasAlgorithmTest, ShortestPathMediumGraph)
 
 TEST(DijkstrasAlgorithmTest, ShortestPathLargeGraph)
 {
-  int expected[] = {0, 7, 15, 5, 14, 11, 22};
+  int expected[] = {0, 7, 15, 5, 14, 11, 12};
   are_equal(expected, 7, run_dijkstras("src/large.txt", 0));
 }
